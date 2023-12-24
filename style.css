@@ -12,6 +12,9 @@ body {
     font-family: 'Outfit', sans-serif;
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
+    position: relative;
+    padding: 0;
+    margin: 0;
 
 }
 img {
@@ -34,7 +37,14 @@ ul li a {
     color: hsl(236, 13%, 42%);
     text-decoration: none;
 }
+ul li a:hover {
+    color: hsl(5, 85%, 63%);
+    opacity: 0.7;
+}
 .homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 1010px;
     margin-top: 50px;
 }
@@ -96,6 +106,10 @@ aside h3 {
     color: #fff;
     /* max-width: 250px; */
 }
+aside h3:hover {
+    color: hsl(35, 77%, 62%);
+    cursor: pointer;
+}
 aside p {
     max-width: 280px;
 }
@@ -143,6 +157,7 @@ footer {
     font-weight: 900;
     letter-spacing: 1px;
 }
+
 .footer2-content p{
     max-width: 195px;
 }
@@ -163,21 +178,43 @@ footer {
 .footer3-content p{
     max-width: 210px;
 }
+.footer1-content h4:hover, .footer2-content h4:hover, .footer3-content h4:hover   {
+    color: hsl(5, 85%, 63%);
+    opacity: 0.7;
+    cursor: pointer;
+}
+.dark {
+    display: none;
+    position: absolute;
+    background-color: rgb(0,0,0, 0.4);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 @media screen and (max-width:700px){
     body {
-        /* width: 600px; */
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
+        margin-top: 10px;
     }
+    
+    
+    .homepage {
+        display: block;
+        margin-top: 0;
+    }
+
     .toggle-button {
         display: flex;
         margin-right: 20px;
     }
     header .navigation{
-        /* display: none; */
+        display: none;
+        z-index: 2;
     }
+
     #navigation {
         position: absolute;
         display: flex;
@@ -187,8 +224,11 @@ footer {
         width: 100%;
     }
     main {
+        max-width: 600px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
     .content {
         margin: 0;
@@ -197,7 +237,6 @@ footer {
         margin-top: 40px;
         display: flex;
         flex-direction: column;
-        max-width: 600px;
     }
     aside p {
         max-width: 350px;
@@ -209,8 +248,19 @@ footer {
     }
 }
 @media screen and (max-width:410px){
-    .homepage {
-        box-shadow: 0 , 0, 0, 100vmax rgba(65, 62, 62, 0.2);
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    main div {
+        max-width: 100%;
+        margin: 0;
+    }
+    main div button {
+        margin-left: 20px;
     }
     #web-3-desktop {
         display: none;
