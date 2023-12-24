@@ -5,7 +5,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     color: hsl(236, 13%, 42%);
     font-family: 'Inter', sans-serif;
@@ -97,9 +97,12 @@ aside hr {
     background-color:  hsl(236, 13%, 42%);
     border: none;
 }
+footer {
+    margin-top: 100px;
+}
 .footer1, .footer2, .footer3 {
     display: flex;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .footer1-content {
@@ -151,5 +154,5 @@ font-weight: 900;
 letter-spacing: 1px;
 }
 .footer3-content p{
-    width: 195px;
+    width: 210px;
 }
