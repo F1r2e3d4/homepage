@@ -12,9 +12,9 @@ body {
     font-family: 'Outfit', sans-serif;
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
-    position: relative;
     padding: 0;
     margin: 0;
+    position: relative;
 
 }
 img {
@@ -96,6 +96,10 @@ main div {
     color: #fff;
     letter-spacing: 3px;
     margin-top: 10px;
+}
+.paragraph button:hover {
+    cursor: pointer;
+    background-color: hsl(240, 100%, 5%);
 }
 aside {
     background-color: hsl(240, 100%, 5%);
@@ -188,26 +192,34 @@ footer {
 }
 #dark {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: rgb(0,0,0, 0.4);
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ 
 }
 @media screen and (max-width:700px){
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .homepage {
+        position: relative;
+        z-index: 1;
+    }
+    .logo img {
         width: 100%;
     }
-    
-    
-    .homepage {
-        display: block;
-        margin-top: 0;
+    .toggle-button img {
+        width: 100%;
     }
-
+    .toggle-button:hover {
+        cursor: pointer;
+    }
+    .homepage {
+        max-width: 600px;
+    }
     .toggle-button {
         display: flex;
         margin-right: 5px;
@@ -215,25 +227,37 @@ footer {
     #icon-menu-close {
         display: flex;
         justify-content: end;
-        padding-top: 10px;        
+        padding-top: 10px; 
+        margin-bottom: 60px;       
     }
     #icon-menu-close img {
         width: auto;
         
     }
+    .icon-menu-close {
+        cursor: pointer;
+    }
     #mobile-menu {
         display: none;
     }
     #navigation {
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         background-color: white;
         height: 100vh;
-        width: 41%;
-        z-index: 2;
+        width: 40%;
+        z-index: 3;
         margin-top: 0;
         top: 0;
+        right: 0;
+    }
+    ul {
+        padding-inline-start: 20px;
+    }
+    ul li a {
+        color: hsl(240, 100%, 5%);
+        font-weight: bold;
     }
     main {
         max-width: 600px;
@@ -241,6 +265,9 @@ footer {
         flex-direction: column;
         justify-content: center;
         width: 100%;
+    }
+    main div {
+        margin: 0;
     }
     .content {
         margin: 0;
@@ -260,28 +287,27 @@ footer {
     }
 }
 @media screen and (max-width:410px){
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+    /* main {
+        max-width: 370px;
+    } */
+    .homepage {
+        max-width: 330px;
     }
-
     main div {
         max-width: 100%;
         margin: 0;
-    }
-    main div button {
-        margin-left: 20px;
     }
     #web-3-desktop {
         display: none;
     }
     #web-3-mobile {
-        display: block;
+        display: flex;
     }
     main .content {
         display: flex;
         flex-direction: column;
+    }
+    .heading h1 {
+        max-width: 370px;
     }
 }
